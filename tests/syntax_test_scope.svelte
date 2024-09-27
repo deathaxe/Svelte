@@ -185,27 +185,27 @@
     {#if porridge.temperature > 100}
 /*  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.embedded.block.svelte
 /*  ^ punctuation.section.embedded.begin.svelte
-/*   ^^^ keyword.control.conditional.svelte
+/*   ^^^ keyword.control.conditional.if.svelte
 /*       ^^^^^^^^^^^^^^^^^^^^^^^^^^ source.js.embedded.svelte
 /*                                 ^ punctuation.section.embedded.end.svelte
 
     {:else if 80 > porridge.temperature}
 /*  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.embedded.block.svelte
 /*  ^ punctuation.section.embedded.begin.svelte
-/*   ^^^^^^^^ keyword.control.conditional.svelte
+/*   ^^^^^^^^ keyword.control.conditional.elseif.svelte
 /*            ^^^^^^^^^^^^^^^^^^^^^^^^^ source.js.embedded.svelte
 /*                                     ^ punctuation.section.embedded.end.svelte
 
     {:else}
 /*  ^^^^^^^ meta.embedded.block.svelte
 /*  ^ punctuation.section.embedded.begin.svelte
-/*   ^^^^^ keyword.control.conditional.svelte
+/*   ^^^^^ keyword.control.conditional.else.svelte
 /*        ^ punctuation.section.embedded.end.svelte
 
     {/if}
 /*  ^^^^^ meta.embedded.block.svelte
 /*  ^ punctuation.section.embedded.begin.svelte
-/*   ^^^ keyword.control.conditional.svelte
+/*   ^^^ keyword.control.conditional.end.svelte
 /*      ^ punctuation.section.embedded.end.svelte
 }
 
@@ -214,7 +214,7 @@
     {#each expression as name}...{/each}
 /*  ^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.embedded.block.svelte
 /*  ^ punctuation.section.embedded.begin.svelte
-/*   ^^^^^ keyword.control.loop.svelte
+/*   ^^^^^ keyword.control.loop.each.svelte
 /*         ^^^^^^^^^^ variable.other.readwrite.js
 /*                    ^^ keyword.operator.assignment.as.svelte
 /*                       ^^^^ variable.other.readwrite.js
@@ -227,7 +227,7 @@
     {#each expression as name, index}...{/each}
 /*  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.embedded.block.svelte
 /*  ^ punctuation.section.embedded.begin.svelte
-/*   ^^^^^ keyword.control.loop.svelte
+/*   ^^^^^ keyword.control.loop.each.svelte
 /*         ^^^^^^^^^^ variable.other.readwrite.js
 /*                    ^^ keyword.operator.assignment.as.svelte
 /*                       ^^^^ variable.other.readwrite.js
@@ -242,7 +242,7 @@
     {#each expression as name (key)}...{/each}
 /*  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.embedded.block.svelte
 /*  ^ punctuation.section.embedded.begin.svelte
-/*   ^^^^^ keyword.control.loop.svelte
+/*   ^^^^^ keyword.control.loop.each.svelte
 /*         ^^^^^^^^^^ variable.other.readwrite.js
 /*                    ^^ keyword.operator.assignment.as.svelte
 /*                       ^^^^^^^^^^ - meta.function-call
@@ -259,7 +259,7 @@
     {#each expression as name, index (key)}...{/each}
 /*  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.embedded.block.svelte
 /*  ^ punctuation.section.embedded.begin.svelte
-/*   ^^^^^ keyword.control.loop.svelte
+/*   ^^^^^ keyword.control.loop.each.svelte
 /*         ^^^^^^^^^^ variable.other.readwrite.js
 /*                    ^^ keyword.operator.assignment.as.svelte
 /*                       ^^^^ variable.other.readwrite.js
@@ -278,14 +278,14 @@
     {#each expression as name}...{:else}...{/each}
 /*  ^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.embedded.block.svelte
 /*  ^ punctuation.section.embedded.begin.svelte
-/*   ^^^^^ keyword.control.loop.svelte
+/*   ^^^^^ keyword.control.loop.each.svelte
 /*         ^^^^^^^^^^ variable.other.readwrite.js
 /*                    ^^ keyword.operator.assignment.as.svelte
 /*                       ^^^^ variable.other.readwrite.js
 /*                           ^ punctuation.section.embedded.end.svelte
 /*                               ^^^^^^^ meta.embedded.block.svelte
 /*                               ^ punctuation.section.embedded.begin.svelte
-/*                                ^^^^^ keyword.control.conditional.svelte
+/*                                ^^^^^ keyword.control.conditional.else.svelte
 /*                                     ^ punctuation.section.embedded.end.svelte
 /*                                         ^^^^^^^ meta.embedded.block.svelte
 /*                                         ^ punctuation.section.embedded.begin.svelte
@@ -297,7 +297,7 @@
 /*  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.embedded.block.svelte
 /*                                            ^ - meta.embedded
 /*  ^ punctuation.section.embedded.begin.svelte
-/*   ^^^^^ keyword.control.loop.svelte
+/*   ^^^^^ keyword.control.loop.each.svelte
 /*         ^^^^^ variable.other.readwrite.js
 /*               ^^ keyword.operator.assignment.as.svelte
 /*                  ^^^^^^^^^^^^^^^^^ meta.mapping.js
@@ -369,17 +369,17 @@
 /*                    ^ punctuation.section.embedded.end.svelte
 /*                        ^^^^^^^^^^^^ meta.embedded.block.svelte
 /*                        ^ punctuation.section.embedded.begin.svelte
-/*                         ^^^^^ keyword.control.await.svelte
+/*                         ^^^^^ keyword.control.flow.svelte
 /*                               ^^^^ variable.other.readwrite.js
 /*                                   ^ punctuation.section.embedded.end.svelte
 /*                                       ^^^^^^^^^^^^^ meta.embedded.block.svelte
 /*                                       ^ punctuation.section.embedded.begin.svelte
-/*                                        ^^^^^^ keyword.control.await.svelte
+/*                                        ^^^^^^ keyword.control.flow.svelte
 /*                                               ^^^^ variable.other.readwrite.js
 /*                                                   ^ punctuation.section.embedded.end.svelte
 /*                                                       ^^^^^^^^ meta.embedded.block.svelte
 /*                                                       ^ punctuation.section.embedded.begin.svelte
-/*                                                        ^^^^^^ keyword.control.await.svelte
+/*                                                        ^^^^^^ keyword.control.await.end.svelte
 /*                                                              ^ punctuation.section.embedded.end.svelte
 
     {#await expression then name}...{/await}
@@ -387,12 +387,12 @@
 /*  ^ punctuation.section.embedded.begin.svelte
 /*   ^^^^^^ keyword.control.await.svelte
 /*          ^^^^^^^^^^ variable.other.readwrite.js
-/*                     ^^^^ keyword.control.await.svelte
+/*                     ^^^^ keyword.control.flow.svelte
 /*                          ^^^^ variable.other.readwrite.js
 /*                              ^ punctuation.section.embedded.end.svelte
 /*                                  ^^^^^^^^ meta.embedded.block.svelte
 /*                                  ^ punctuation.section.embedded.begin.svelte
-/*                                   ^^^^^^ keyword.control.await.svelte
+/*                                   ^^^^^^ keyword.control.await.end.svelte
 /*                                         ^ punctuation.section.embedded.end.svelte
 
     {#await expression catch name}...{/await}
@@ -400,12 +400,12 @@
 /*  ^ punctuation.section.embedded.begin.svelte
 /*   ^^^^^^ keyword.control.await.svelte
 /*          ^^^^^^^^^^ variable.other.readwrite.js
-/*                     ^^^^^ keyword.control.await.svelte
+/*                     ^^^^^ keyword.control.flow.svelte
 /*                           ^^^^ variable.other.readwrite.js
 /*                               ^ punctuation.section.embedded.end.svelte
 /*                                   ^^^^^^^^ meta.embedded.block.svelte
 /*                                   ^ punctuation.section.embedded.begin.svelte
-/*                                    ^^^^^^ keyword.control.await.svelte
+/*                                    ^^^^^^ keyword.control.await.end.svelte
 /*                                          ^ punctuation.section.embedded.end.svelte
 
 ###[ KEY STATEMENTS ]##########################################################

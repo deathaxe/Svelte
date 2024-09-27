@@ -5,3 +5,6 @@
 
 # screenshots
 media/ export-ignore
+
+# development
+tests/ export-ignore

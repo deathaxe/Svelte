@@ -1,0 +1,66 @@
+name: CI Syntax Tests
+
+on:
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - '**'
+    paths:
+      - '.github/workflows/ci-syntax-tests.yml'
+      - '**.sublime-syntax'
+      - '**/syntax_test_*'
+      - '**.tmPreferences'
+
+  workflow_dispatch:
+
+jobs:
+  syntax_tests:
+    name: Sublime Text ${{ matrix.build }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15 # default is 6 hours!
+    strategy:
+      matrix:
+        include:
+          - build: 4143
+            default_packages: v4143
+            less_ref: st4107
+            sass_ref: st4134
+          - build: 4152
+            default_packages: v4152
+            less_ref: master
+            sass_ref: master
+          - build: 4169
+            default_packages: v4169
+            less_ref: master
+            sass_ref: master
+          - build: 4180
+            default_packages: v4180
+            less_ref: master
+            sass_ref: master
+          - build: latest
+            default_packages: master
+            less_ref: master
+            sass_ref: master
+    steps:
+      - name: Checkout ${{ env.package_name }} (primary package)
+        uses: actions/checkout@v4
+        with:
+          path: ${{ env.package_name }}
+      - name: Checkout Less (dependency)
+        uses: actions/checkout@v4
+        with:
+          repository: SublimeText/Less
+          ref: ${{ matrix.less_ref }}
+          path: Less
+      - name: Checkout Sass/Scss (dependency)
+        uses: actions/checkout@v4
+        with:
+          repository: SublimeText/Sass
+          ref: ${{ matrix.sass_ref }}
+          path: Sass
+      - uses: SublimeText/syntax-test-action@v2
+        with:
+          build: ${{ matrix.build }}
+          default_packages: ${{ matrix.default_packages }}
+          additional_packages: Less,Sass

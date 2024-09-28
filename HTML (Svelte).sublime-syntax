@@ -582,7 +582,7 @@ contexts:
 
   svelte-embedded-variable:
     - meta_include_prototype: false
-    - match: (?=\{)
+    - match: (?=[\[{])
       set: scope:source.js.embedded.svelte#expression-no-comma
     - match: \b[_$\p{L}\p{Nl}][_$\p{L}\p{Nl}\p{Mn}\p{Mc}\p{Nd}\p{Pc}\x{200C}\x{200D}]*\b
       scope: variable.other.readwrite.js

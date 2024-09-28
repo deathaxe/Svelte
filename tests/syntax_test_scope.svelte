@@ -292,6 +292,28 @@
 /*                                          ^^^^^ keyword.control.loop.end.svelte
 /*                                               ^ punctuation.section.embedded.end.svelte
 
+    {#each items as [ id, name, qty ], i (id)}
+/*  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.embedded.block.svelte
+/*                                            ^ - meta.embedded
+/*  ^ punctuation.section.embedded.begin.svelte
+/*   ^^^^^ keyword.control.loop.each.svelte
+/*         ^^^^^ variable.other.readwrite.js
+/*               ^^ keyword.operator.assignment.as.svelte
+/*                  ^^^^^^^^^^^^^^^^^ meta.sequence.js
+/*                  ^ punctuation.section.sequence.begin.js
+/*                    ^^ variable.other.readwrite.js
+/*                      ^ punctuation.separator.comma.js
+/*                        ^^^^ variable.other.readwrite.js
+/*                            ^ punctuation.separator.comma.js
+/*                              ^^^ variable.other.readwrite.js
+/*                                  ^ punctuation.section.sequence.end.js
+/*                                   ^ punctuation.separator.comma.svelte
+/*                                     ^ variable.other.readwrite.js
+/*                                       ^^^^ meta.group.js
+/*                                       ^ punctuation.section.group.begin.js
+/*                                        ^^ variable.other.readwrite.js
+/*                                          ^ punctuation.section.group.end.js
+/*                                           ^ punctuation.section.embedded.end.svelte
 
     {#each items as { id, name, qty }, i (id)}
 /*  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.embedded.block.svelte

@@ -1,0 +1,34 @@
+%YAML 1.2
+---
+scope: source.js.embedded.svelte
+version: 2
+hidden: true
+
+extends: Packages/JavaScript/JavaScript.sublime-syntax
+
+contexts:
+
+  # required until ST4176
+  expressions:
+    - match: (?=\S)
+      push: [ expression-end, expression-begin ]
+
+  literal-variable:
+    - meta_prepend: true
+    - match: (\$\$)(?:restProps|props|slots)\b
+      scope: variable.language.dollar.js
+      captures:
+        1: punctuation.definition.variable.js
+      pop: 1
+
+  string-content:
+    - meta_prepend: true
+    - match: (\$\$)(?:restProps|props|slots)\b
+      scope: meta.interpolation.js variable.language.dollar.js
+      captures:
+        1: punctuation.definition.variable.js
+      push:
+        - clear_scopes: 1
+        - meta_include_prototype: false
+        - match: ''
+          pop: 1

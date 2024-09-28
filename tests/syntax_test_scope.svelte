@@ -170,14 +170,14 @@
 /*  ^^^^^^^^^^^^^^^^^^^^^^^ meta.tag.component.html
 /*  ^ punctuation.definition.tag.begin.html
 /*   ^^^^^^^^^^^^^^^^^^^ entity.name.tag.component.svelte
-/*            ^ punctuation.separator.namespace.svelte
+/*            ^ punctuation.accessor.svelte
 /*                       ^^ punctuation.definition.tag.end.html
 
     <namespace:component />
 /*  ^^^^^^^^^^^^^^^^^^^^^^^ meta.tag.component.html
 /*  ^ punctuation.definition.tag.begin.html
 /*   ^^^^^^^^^^^^^^^^^^^ entity.name.tag.component.svelte
-/*            ^ punctuation.separator.namespace.svelte
+/*            ^ punctuation.accessor.svelte
 /*                       ^^ punctuation.definition.tag.end.html
 
 ###[ IF STATEMENTS ]###########################################################

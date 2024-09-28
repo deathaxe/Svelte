@@ -404,7 +404,7 @@ contexts:
       captures:
         1: punctuation.definition.tag.begin.html
         2: entity.name.tag.component.svelte
-        3: punctuation.separator.namespace.svelte
+        3: punctuation.accessor.svelte
       push: svelte-component-body
 
   svelte-component-body:

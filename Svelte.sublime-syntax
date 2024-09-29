@@ -1,13 +1,12 @@
 %YAML 1.2
 ---
-name: HTML (Svelte)
+name: Svelte
 scope: text.html.svelte
 version: 2
 
 extends: Packages/HTML/HTML.sublime-syntax
 
 file_extensions:
-  - svlt
   - svelte
 
 variables:

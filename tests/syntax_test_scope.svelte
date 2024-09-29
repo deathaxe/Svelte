@@ -1,4 +1,4 @@
-/* SYNTAX TEST "Packages/Svelte/HTML (Svelte).sublime-syntax" */
+/* SYNTAX TEST "Packages/Svelte/Svelte.sublime-syntax" */
 
 ###[ SCRIPTS ]#################################################################
 

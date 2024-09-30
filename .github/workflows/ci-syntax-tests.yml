@@ -48,7 +48,7 @@ jobs:
             less_ref: master
             sass_ref: master
     steps:
-      - name: Checkout ${{ env.package_name }} (primary package)
+      - name: Checkout Svelte (primary package)
         uses: actions/checkout@v4
         with:
           path: Svelte
@@ -67,5 +67,7 @@ jobs:
       - uses: SublimeText/syntax-test-action@v2
         with:
           build: ${{ matrix.build }}
+          package_name: Svelte
+          package_root: Svelte
           default_packages: ${{ matrix.default_packages }}
           additional_packages: Less,Sass

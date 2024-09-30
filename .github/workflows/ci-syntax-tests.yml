@@ -10,8 +10,13 @@ on:
       - '.github/workflows/ci-syntax-tests.yml'
       - '**.sublime-syntax'
       - '**/syntax_test_*'
-      - '**.tmPreferences'
-
+  pull_request:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/ci-syntax-tests.yml'
+      - '**.sublime-syntax'
+      - '**/syntax_test_*'
   workflow_dispatch:
 
 jobs:
